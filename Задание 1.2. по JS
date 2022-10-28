@@ -1,48 +1,27 @@
-const arr = [1,2,3,5,1,6,2,5,6,7]
-const newSet = [...(new Set(arr))]
-console.log(newSet);
-
-
-
-++++++++
-
-
-
-const  obj1 = { id: 1, name: "userName" }
-const  obj2 = { id: 1, password: "qwerty" }
-
-const newObj = {...obj1, ...obj2}
- 
-console.log(newObj);
-
-
-
-
-++++++++++++++
-
-
-
-
-
-const add = (x,y) => x+
-
-
-
-
-+++++++++++++
-
-
-
-
-  const   sleep = ms => {
-     return new Promise(resolve => setTimeout(resolve, ms));
+async function lottery()  {
+  console.log("Вы начали игру");
+  try {
+    let promise = await new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      Math.random(0) > 0.5 ? resolve() : reject("Вы промахнулись");
+    }, 1000);
+    });
+      console.log("Вы выиграли")
+      console.log("Вам заплатили")
+  } catch(err) {
+    console.log("Вы проиграли")
+  } finally {
+    console.log("Игра закончена")
   }
-  
-  
-  sleep(5000).then(
-      () => {
-         console.log('Выполнилось через 5 секунд!') 
-      }
-  )
+}
 
-
+lottery()
+ 
+ 
+ 
+ 
+ 
+ ++++++++++++++++++++
+ 
+ 
+ 
