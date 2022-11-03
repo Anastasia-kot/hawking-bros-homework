@@ -1,48 +1,16 @@
-const arr = [1,2,3,5,1,6,2,5,6,7]
-const newSet = [...(new Set(arr))]
-console.log(newSet);
+<!doctype html>
+<textarea style="width:200px; height: 60px;" id="area"></textarea>
+<script type="text/javascript">
+  let area = document.getElementById('area');
+  let text = localStorage.getItem('myText');
+  if (!text) {text = ''}
+  area.value = text; 
 
 
-
-++++++++
-
-
-
-const  obj1 = { id: 1, name: "userName" }
-const  obj2 = { id: 1, password: "qwerty" }
-
-const newObj = {...obj1, ...obj2}
+  area.addEventListener("change", (e) => {
+   
+    localStorage.setItem('myText', e.target.value);
  
-console.log(newObj);
+  });	
 
-
-
-
-++++++++++++++
-
-
-
-
-
-const add = (x,y) => x+
-
-
-
-
-+++++++++++++
-
-
-
-
-  const   sleep = ms => {
-     return new Promise(resolve => setTimeout(resolve, ms));
-  }
-  
-  
-  sleep(5000).then(
-      () => {
-         console.log('Выполнилось через 5 секунд!') 
-      }
-  )
-
-
+</script>
